@@ -1,16 +1,16 @@
 import express from 'express';
-import bodyParser from 'body-parser';
+
 import cors from 'cors';
-import opiskelijaRoutes from './src/routes/opiskelijaRoutes';
-import opettajaRoutes from './src/routes/opettajaRoutes';
-import kurssiRoutes from './src/routes/kurssiRoutes';
-import arviointiRoutes from './src/routes/arviointiRoutes';
+import opiskelijaRoutes from './routes/opiskelijaRoutes';
+import opettajaRoutes from './routes/opettajaRoutes';
+import kurssiRoutes from './routes/kurssiRoutes';
+import arviointiRoutes from './routes/arviointiRoutes';
 
 const app = express();
 const port = 3000;
 
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
 app.use('/api/opiskelijat', opiskelijaRoutes);
 app.use('/api/opettajat', opettajaRoutes);
